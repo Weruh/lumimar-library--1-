@@ -1,0 +1,7 @@
+{
+  "name": "Lumimar Library",
+  "description": "An elegant, chic digital library for managing and organizing IDPLR ebooks and courses.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
