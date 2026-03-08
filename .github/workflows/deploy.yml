@@ -21,17 +21,15 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
       - name: Install and Build
         run: |
-          cd frontend
           npm install
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This tells GitHub to host the 'dist' folder created by Vite
-          path: './frontend/dist'
+          # This assumes Vite puts your website in the 'dist' folder
+          path: './dist'
 
   deploy:
     environment:
