@@ -20,15 +20,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+      
       - name: Install and Build
         run: |
+          # This builds your project
           npm install
           npm run build
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This assumes Vite puts your website in the 'dist' folder
+          # Your logs show Vite is outputting to the 'dist' folder.
+          # Since your package.json is in the root, this should be the path:
           path: './dist'
 
   deploy:
