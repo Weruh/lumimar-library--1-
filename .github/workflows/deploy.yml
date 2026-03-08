@@ -23,16 +23,14 @@ jobs:
       
       - name: Install and Build
         run: |
-          # This builds your project
           npm install
           npm run build
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Your logs show Vite is outputting to the 'dist' folder.
-          # Since your package.json is in the root, this should be the path:
-          path: './dist'
+          # This is the path where your files are actually being built
+          path: 'frontend/dist'
 
   deploy:
     environment:
